@@ -1,0 +1,26 @@
+
+public class Conta
+{
+    public decimal Saldo { get; private set; } = 100;
+
+    public void Sacar(decimal valor)
+    {
+        if (valor > Saldo)
+            throw new Exception("Saldo insuficiente");
+
+        Saldo -= valor;
+    }
+}
+
+// Uso no programa
+var conta = new Conta();
+
+try
+{
+    logger.Info("Tentativa de saque de 200");
+    conta.Sacar(200);
+}
+catch (Exception ex)
+{
+    logger.Error(ex, "Erro ao sacar: saldo insuficiente");
+}

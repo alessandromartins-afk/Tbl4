@@ -1,0 +1,31 @@
+
+decimal saldo = 500;
+decimal saldoDestino = 100;
+
+try
+{
+    // Depósito
+    logger.Info("Iniciando depósito");
+    saldo += 200;
+    logger.Info("Depósito realizado com sucesso");
+
+    // Saque
+    logger.Info("Iniciando saque");
+    if (saldo < 100)
+        throw new Exception("Saldo insuficiente");
+    saldo -= 100;
+    logger.Info("Saque realizado com sucesso");
+
+    // Transferência
+    logger.Info("Iniciando transferência");
+    if (saldo < 300)
+        throw new Exception("Saldo insuficiente");
+
+    saldo -= 300;
+    saldoDestino += 300;
+    logger.Info("Transferência realizada com sucesso");
+}
+catch (Exception ex)
+{
+    logger.Error(ex, "Erro na operação bancária");
+}

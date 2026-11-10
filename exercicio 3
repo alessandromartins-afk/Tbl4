@@ -1,0 +1,10 @@
+
+try
+{
+    int numero = int.Parse("abc");
+    logger.Info("Conversão realizada");
+}
+catch (Exception ex)
+{
+    logger.Error(ex, "Erro na conversão");
+}

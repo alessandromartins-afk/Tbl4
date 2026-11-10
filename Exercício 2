@@ -1,0 +1,6 @@
+
+logger.Info("Programa iniciado");
+
+// Execução do programa
+
+logger.Info("Programa finalizado");

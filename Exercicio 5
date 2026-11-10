@@ -1,0 +1,4 @@
+
+logger.Info("Operação realizada normalmente");
+logger.Warn("Tentativa inválida");
+logger.Error("Exceção durante a operação");
